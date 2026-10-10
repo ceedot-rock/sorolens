@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 import path from "node:path";
 import withPWA from "@ducanh2912/next-pwa";
+import { API_URL } from "./lib/config";
 
 const baseConfig: NextConfig = {
   outputFileTracingRoot: path.resolve(process.cwd(), "../.."),
@@ -34,9 +35,7 @@ export default withPWA({
       {
         // Stale-while-revalidate for the upstream Go API (NEXT_PUBLIC_API_URL)
         urlPattern: ({ url }) => {
-          const apiBase =
-            process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080";
-          return url.href.startsWith(apiBase);
+          return url.href.startsWith(API_URL);
         },
         handler: "StaleWhileRevalidate",
         options: {

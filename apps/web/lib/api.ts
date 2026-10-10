@@ -54,8 +54,7 @@ import type {
   RuleLibraryResponse,
 } from "./types";
 import { recordLastUpdated, resourceFromUrl } from "./lastUpdated";
-
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080";
+import { API_URL } from "./config";
 
 export class ApiError extends Error {
   constructor(

@@ -8,7 +8,7 @@ import { useTheme } from "./ThemeProvider";
 import { ContractSummary } from "@/lib/types";
 
 // Need to match the generic Next.js standard API url
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080";
+import { API_URL } from "@/lib/config";
 
 export function CmdkSearch() {
   const [open, setOpen] = React.useState(false);

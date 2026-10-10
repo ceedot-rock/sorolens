@@ -2,8 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import type { ContractEvent } from "@/lib/types";
-
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080";
+import { API_URL } from "@/lib/config";
 // ws:// or wss:// derived from the HTTP API URL.
 const WS_BASE = API_URL.replace(/^http/, "ws");
 
