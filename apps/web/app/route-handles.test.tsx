@@ -33,8 +33,8 @@ describe("route handling", () => {
     vi.unstubAllEnvs();
   });
 
-  it("derives the crawler rules and sitemap from NEXT_PUBLIC_APP_URL", () => {
-    vi.stubEnv("NEXT_PUBLIC_APP_URL", "https://staging.sorolens.dev/");
+  it("derives the crawler rules and sitemap from NEXT_PUBLIC_SITE_URL", () => {
+    vi.stubEnv("NEXT_PUBLIC_SITE_URL", "https://staging.sorolens.dev/");
 
     expect(robots()).toEqual({
       rules: {
@@ -46,8 +46,8 @@ describe("route handling", () => {
     });
   });
 
-  it("falls back to the production origin when NEXT_PUBLIC_APP_URL is unset", () => {
-    vi.stubEnv("NEXT_PUBLIC_APP_URL", undefined);
+  it("falls back to the production origin when NEXT_PUBLIC_SITE_URL is unset", () => {
+    vi.stubEnv("NEXT_PUBLIC_SITE_URL", undefined);
 
     expect(robots()).toEqual({
       rules: {

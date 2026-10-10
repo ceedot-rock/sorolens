@@ -4,9 +4,10 @@ import "./globals.css";
 import { NavigationProgress } from "@/components/NavigationProgress";
 import { PlausibleAnalytics } from "@/components/PlausibleAnalytics";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { siteUrl } from "@/lib/siteUrl";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://sorolens.dev"),
+  metadataBase: new URL(siteUrl()),
   manifest: "/manifest.json",
   title: {
     default: "Sorolens — Indexed Observability for Soroban",
